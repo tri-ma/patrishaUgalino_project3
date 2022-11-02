@@ -1,33 +1,45 @@
+import firebase from './firebase.js';
+import { useState } from 'react';
+
 const Form = () => {
+    const [ taskName, setTask ] = useState('');
+    const handleOnChange = (e) => {
+        setTask(e.target.value);
+    }
+
+    const addTask = () => {
+        const taskRef = firebase.database().ref('Task');
+        const task = {
+            taskName,
+            complete: false,
+        };
+        taskRef.push(task);
+        setTask('');
+    }
+
     return (
-        <section className="wrapper form">
-            <form action="GET">
-                <div className="flex1">
-                    <label htmlFor="">Task name</label>
-                    <input type="text" placeholder="task name" className="taskName"/>
+        <div className='form'>
+            <form>
+                <label htmlFor="">Task Name</label>
+                <input type="text" placeholder="Task Name" value={taskName} onChange={handleOnChange} />
 
-                    <div className="flex2">
-                        <label htmlFor="">Date due</label>
-                        <input type="date" />
+                <label htmlFor="">Due Date</label>
+                <input type="date" />
 
-                        <label htmlFor="">Time due</label>
-                        <input type="time" />
-                        
-                        <label htmlFor="taskCategory">Task category</label>
-                        <select name="taskCategory" id="taskCategory">
-                            <option value="placeholder">What kind of task is this?</option>
-                            <option value="">Personal</option>
-                            <option value="">Bills</option>
-                            <option value="">Work</option>
-                            <option value="">School</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button className="addTask">+</button>
+                <button className="addTask" type="submit" value="Submit" onClick={ addTask }>+</button>
             </form>
-        </section>
-    )
+
+            {/* <div className='taskList'>
+                <button onClick={addTask}>+</button>
+                {
+                    taskName === ''
+                        ? <button className="addTask" type="submit" value="Submit" onClick={addTask}>+</button>
+                        : <button>-</button>
+
+                }
+            </div>  */}
+        </div>
+    );
 }
 
 export default Form;

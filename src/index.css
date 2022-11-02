@@ -1,11 +1,80 @@
 body {
   background-color: rgba(253, 253, 243, 0.8);
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: auto;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+h1,
+p {
+  font-family: didot;
+  font-weight: bold;
+  color: rgba(0, 42, 68, 0.8);
+}
+
+h1 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+p {
+  text-transform: 1rem;
+  align-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+label {
+  display: none;
+}
+
+input::placeholder {
+  color: rgba(253, 253, 243, 0.8)
+}
+
+input,
+select {
+  border: 1px solid rgba(0, 42, 68, 0.8);
+  background-color: rgba(0, 42, 68, 0.8);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(253, 253, 243, 0.8);
+}
+
+input,
+select,
+button {
+  margin: 0 10px;
+}
+
+button {
+  border: none;
+  font-size: 2rem;
+  background-color: rgba(0, 42, 68, 0.5);
+  color: rgba(0, 42, 68, 0.8);
+}
+
+/* body {
+  background-color: rgba(253, 253, 243, 0.8);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.body {
+  height: 92vh;
 }
 
 code {
@@ -19,14 +88,30 @@ code {
   margin: 0 auto;
 }
 
-h1 {
-  font: 1.2rem Didot bold;
-  text-transform: uppercase;
-  color: rgba(0, 42, 68, 0.8);
+.header {
   margin: 50px 50px;
 }
 
-form {
+h1, p {
+  font-family: didot;
+  font-weight: bold;
+  color: rgba(0, 42, 68, 0.8);
+}
+
+h1 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+p {
+  text-transform: 1rem;
+  align-content: center;
+}
+
+.form {
+  background-color: red;
+}
+/* form {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -68,6 +153,12 @@ input, select {
 .addTask {
   border: none;
   font-size: 4rem;
+  background-color: rgba(0, 42, 68, 0.5);
+  color: rgba(0, 42, 68, 0.8);
+  padding: 10px 20px;
+}
+
+.addTask:hover {
   background-color: rgba(0, 42, 68, 0.8);
   color: rgba(253, 253, 243, 0.8);
 }
@@ -80,4 +171,17 @@ input, select {
 .flex2 input, 
 .flex2 select {
   height: 40px;
+} */
+
+/* footer {
+  font-size: 1rem;
+  background-color: rgba(92, 14, 17, 0.8);
 }
+
+footer p {
+  color: rgba(253, 253, 243, 0.8);
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: 0 auto;
+} */
